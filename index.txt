@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdot Cosmetics</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            background: linear-gradient(to bottom, #ffcccc, #f5e1da);
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #d63384;
+        }
+        #chatbox {
+            width: 100%; 
+            max-width: 400px; 
+            height: 400px; 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            overflow-y: scroll; 
+            margin: 20px auto; 
+            background: white;
+        }
+        #userInput { 
+            width: 80%; 
+            padding: 10px; 
+        }
+        button { 
+            padding: 10px; 
+            background-color: #d63384; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        }
+        .logo img {
+            width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kdot Cosmetics</h1>
+    <div class="navbar">
+        <span>Home</span>
+        <span>About</span>
+        <span>Products</span>
+    </div>
+    <div class="logo">
+        <img src="https://via.placeholder.com/200" alt="Pretty Cartoon Girl">
+    </div>
+    
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+    
+    <script>
+        function sendMessage() {
+            let userMessage = document.getElementById("userInput").value;
+            document.getElementById("chatbox").innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+            document.getElementById("userInput").value = "";
+        }
+    </script>
+    
+    <!-- Chatbase Chatbot Embed -->
+    <script src="https://www.chatbase.co/embed.js" chatbotId="YOUR_CHATBASE_CHATBOT_ID" defer></script>
+</body>
+</html>
